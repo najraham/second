@@ -3,11 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Index;
+use App\Service;
+use App\Project;
 
 class PagesController extends Controller
 {
     public function show_index(){
-        return view('frontend.pages.index');
+        $index = Index::first();
+        $services = Service::all();
+        $service_count = 1;
+        $projects = Project::all();
+        $project_count = 1;
+        return view('frontend.pages.index')->with([
+            'index' => $index,
+            'services' => $services,
+            'service_count' => $service_count,
+            'projects' => $projects,
+            'project_count' => $project_count,
+            ]);
     }
 
     public function show_about(){
