@@ -13,161 +13,46 @@
         </div>
     </section>
 
-    <section class="ftco-section ftco-portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 portfolio-wrap ftco-animate">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <div class="img js-fullheight" style="background-image: url({{asset('frontend/images/work-1.jpg')}});">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="text">
-                                <div class="px-0 pt-5">
-                                    <div class="desc">
-                                        <div class="top top-relative">
-                                            <span class="subheading">Web Design {12/06/2019}</span>
-                                            <h2 class="mb-4"><a href="{{route('show_single_work_page')}}">Midway</a></h2>
-                                        </div>
-                                        <div class="absolute relative">
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-                                            <p><a href="{{route('show_single_work_page')}}" class="custom-btn">View Portfolio</a></p>
+    {{-- PROJECTS --}}
+    @if (count($projects) > 0)
+        <section class="ftco-section ftco-portfolio">
+            <div class="container">
+                <div class="row">
+                    @foreach ($projects as $project)
+                        <div class="col-md-6 portfolio-wrap ftco-animate">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    {{-- image --}}
+                                    <div class="img js-fullheight" style="background-image: url({{asset('frontend/images/'.$project->image)}});">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="text">
+                                        <div class="px-0 pt-5">
+                                            <div class="desc">
+                                                <div class="top top-relative">
+                                                    {{-- created at --}}
+                                                    <span class="subheading">{{$project->created_at->format('Y/M/d')}}</span>
+                                                    {{-- title --}}
+                                                    <h2 class="mb-4"><a href="{{route('show_single_work_page')}}">{{$project->title}}</a></h2>
+                                                </div>
+                                                <div class="absolute relative">
+                                                    {{-- description --}}
+                                                    <p>{{$project->description}}</p>
+                                                    <p><a href="{{route('show_single_work_page')}}" class="custom-btn">View in detail</a></p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 portfolio-wrap ftco-animate">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <div class="img js-fullheight" style="background-image: url({{asset('frontend/images/work-2.jpg')}});">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="text">
-                                <div class="px-0 pt-5">
-                                    <div class="desc">
-                                        <div class="top top-relative">
-                                            <span class="subheading">Writing {12/06/2019}</span>
-                                            <h2 class="mb-4"><a href="{{route('show_single_work_page')}}">Workplace Office</a></h2>
-                                        </div>
-                                        <div class="absolute relative">
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-                                            <p><a href="{{route('show_single_work_page')}}" class="custom-btn">View Portfolio</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 portfolio-wrap ftco-animate">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <div class="img js-fullheight" style="background-image: url({{asset('frontend/images/work-3.jpg')}});">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="text">
-                                <div class="px-0 pt-5">
-                                    <div class="desc">
-                                        <div class="top top-relative">
-                                            <span class="subheading">Illustration {12/06/2019}</span>
-                                            <h2 class="mb-4"><a href="{{route('show_single_work_page')}}">Jacket Leather</a></h2>
-                                        </div>
-                                        <div class="absolute relative">
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-                                            <p><a href="{{route('show_single_work_page')}}" class="custom-btn">View Portfolio</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 portfolio-wrap ftco-animate">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <div class="img js-fullheight" style="background-image: url({{asset('frontend/images/work-4.jpg')}});">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="text">
-                                <div class="px-0 pt-5">
-                                    <div class="desc">
-                                        <div class="top top-relative">
-                                            <span class="subheading">Application {12/06/2019}</span>
-                                            <h2 class="mb-4"><a href="{{route('show_single_work_page')}}">Topless</a></h2>
-                                        </div>
-                                        <div class="absolute relative">
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-                                            <p><a href="{{route('show_single_work_page')}}" class="custom-btn">View Portfolio</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 portfolio-wrap ftco-animate">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <div class="img js-fullheight" style="background-image: url({{asset('frontend/images/work-5.jpg')}});">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="text">
-                                <div class="px-0 pt-5">
-                                    <div class="desc">
-                                        <div class="top top-relative">
-                                            <span class="subheading">Writing {12/06/2019}</span>
-                                            <h2 class="mb-4"><a href="{{route('show_single_work_page')}}">Fashion Style</a></h2>
-                                        </div>
-                                        <div class="absolute relative">
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-                                            <p><a href="{{route('show_single_work_page')}}" class="custom-btn">View Portfolio</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 portfolio-wrap ftco-animate">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <div class="img js-fullheight" style="background-image: url({{asset('frontend/images/work-6.jpg')}});">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="text">
-                                <div class="px-0 pt-5">
-                                    <div class="desc">
-                                        <div class="top top-relative">
-                                            <span class="subheading">Illustration {12/06/2019}</span>
-                                            <h2 class="mb-4"><a href="{{route('show_single_work_page')}}">Prickly</a></h2>
-                                        </div>
-                                        <div class="absolute relative">
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-                                            <p><a href="{{route('show_single_work_page')}}" class="custom-btn">View Portfolio</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
 
-    </section>
+        </section>
+    @else
+        <p>No projects yet</p>
+    @endif
 @endsection

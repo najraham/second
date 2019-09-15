@@ -167,5 +167,7 @@
                 <?php $project_count = $project_count + 1 ?>
             @endforeach
         </section>
+    @else
+        <p>No projects yet</p>
     @endif
 @endsection

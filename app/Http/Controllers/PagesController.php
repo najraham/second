@@ -46,7 +46,10 @@ class PagesController extends Controller
     }
 
     public function show_work(){
-        return view('frontend.pages.work');
+        $projects = Project::all();
+        return view('frontend.pages.work')->with([
+            'projects' => $projects,
+        ]);
     }
 
     public function show_single_work(){
