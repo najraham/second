@@ -6,13 +6,14 @@
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-end">
                 <div class="col-md-9 ftco-animate pb-5">
-                    <h2 class="mb-3 bread">Contact Us</h2>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('show_index_page')}}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Cintact us <i class="ion-ios-arrow-forward"></i></span></p>
+                    <h2 class="mb-3 bread">Contact Me</h2>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('show_index_page')}}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact <i class="ion-ios-arrow-forward"></i></span></p>
                 </div>
             </div>
         </div>
     </section>
 
+    {{-- CONTACT --}}
     <section class="contact-section bg-primary">
         <div class="container">
             <div class="row no-gutters d-flex contact-info">
@@ -22,7 +23,7 @@
                             <span class="icon-map-signs"></span>
                         </div>
                         <h3 class="mb-4">Address</h3>
-                        <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+                        <p>{{$contact->address}}</p>
                     </div>
                 </div>
                 <div class="col-md-3 d-flex">
@@ -31,7 +32,7 @@
                             <span class="icon-phone2"></span>
                         </div>
                         <h3 class="mb-4">Contact Number</h3>
-                        <p><a href="tel://1234567920">+ 1235 2355 98</a></p>
+                        <p><a href="tel://1234567920">{{$contact->phone}}</a></p>
                     </div>
                 </div>
                 <div class="col-md-3 d-flex">
@@ -40,7 +41,7 @@
                             <span class="icon-paper-plane"></span>
                         </div>
                         <h3 class="mb-4">Email Address</h3>
-                        <p><a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                        <p><a href="mailto:info@yoursite.com">{{$contact->email}}</a></p>
                     </div>
                 </div>
                 <div class="col-md-3 d-flex">
@@ -49,16 +50,17 @@
                             <span class="icon-globe"></span>
                         </div>
                         <h3 class="mb-4">Website</h3>
-                        <p><a href="#">yoursite.com</a></p>
+                        <p><a href="#">{{$contact->website}}</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    {{-- MESSAGE --}}
     <section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
         <div class="container-fluid px-0">
-            <div class="row no-gutters block-9">
+            <div class="row no-gutters block-9 justify-content-center">
                 <div class="col-md-6 order-md-last d-flex">
                     <form action="#" class="bg-light p-5 contact-form">
                         <div class="form-group">
@@ -74,15 +76,15 @@
                             <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                            <input type="submit" value="Send Message" class="btn btn-info py-3 px-5">
                         </div>
                     </form>
 
                 </div>
 
-                <div class="col-md-6 d-flex">
+                {{-- <div class="col-md-6 d-flex">
                     <div id="map" class="bg-white"></div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

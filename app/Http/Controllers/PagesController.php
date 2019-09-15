@@ -7,6 +7,7 @@ use App\Index;
 use App\Service;
 use App\Project;
 use App\Testimony;
+use App\ContactInfo;
 
 class PagesController extends Controller
 {
@@ -42,7 +43,10 @@ class PagesController extends Controller
     }
 
     public function show_contact(){
-        return view('frontend.pages.contact');
+        $contact = ContactInfo::first();
+        return view('frontend.pages.contact')->with([
+            'contact' => $contact,
+        ]);
     }
 
     public function show_work(){
