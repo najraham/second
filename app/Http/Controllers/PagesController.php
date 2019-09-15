@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Index;
 use App\Service;
 use App\Project;
+use App\Testimony;
 
 class PagesController extends Controller
 {
@@ -25,7 +26,19 @@ class PagesController extends Controller
     }
 
     public function show_about(){
-        return view('frontend.pages.about');
+        $index = Index::first();
+        $services = Service::all();
+        $service_count = 1;
+        $projects = Project::all();
+        $testimonies = Testimony::all();
+        // projects
+        return view('frontend.pages.about')->with([
+            'index' => $index,
+            'services' => $services,
+            'service_count' => $service_count,
+            'projects' => $projects,
+            'testimonies' => $testimonies,
+        ]);
     }
 
     public function show_contact(){
