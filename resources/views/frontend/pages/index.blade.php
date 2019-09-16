@@ -8,48 +8,17 @@
 			<div class="half order-md-last"></div>
 			<div class="half">
 				<div class="home-slider owl-carousel">
-                    <div class="slider-item js-fullheight">
-                        <div class="overlay"></div>
-                        <div class="container-fluid p-0">
-                            <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-                                <div class="one-third img js-fullheight" style="background-image:url('{{asset("frontend/images/bg_1.jpg")}}');">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="slider-item js-fullheight">
-                        <div class="overlay"></div>
-                        <div class="container-fluid p-0">
-                            <div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-                                <div class="one-third img js-fullheight" style="background-image:url('{{asset("frontend/images/bg_2.jpg")}}');">
-                                    <div class="overlay"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="slider-item js-fullheight">
-                        <div class="overlay"></div>
-                        <div class="container-fluid p-0">
-                            <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-                                <div class="one-third img js-fullheight" style="background-image:url('{{asset("frontend/images/person_1.jpg")}}');">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="slider-item js-fullheight">
-                        <div class="overlay"></div>
+                    @foreach ($banner_images as $banner_image)
+                        <div class="slider-item js-fullheight">
+                            <div class="overlay"></div>
                             <div class="container-fluid p-0">
-                                <div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-                                    <div class="one-third img js-fullheight" style="background-image:url('{{asset("frontend/images/person_2.jpg")}}');">
-                                        <div class="overlay"></div>
+                                <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+                                    <div class="one-third img js-fullheight" style="background-image:url('{{asset("frontend/images/".$banner_image)}}');">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -115,7 +84,7 @@
                                         <div class="desc pt-5 pl-4 pr-4 pt-lg-0 pl-lg-5 pl-xl-0 pr-xl-0">
                                             <div class="top">
                                                 {{-- created_at --}}
-                                            <span class="subheading">{{$project->created_at}}</span>
+                                            <span class="subheading">{{$project->created_at->format('Y/M/d')}}</span>
                                             {{-- title --}}
                                             <h2 class="mb-4"><a href="work.html">{{$project->title}}</a></h2>
                                         </div>
@@ -145,7 +114,7 @@
                                                 <div class="desc">
                                                     <div class="top">
                                                         {{-- created_at --}}
-                                                        <span class="subheading">{{$project->created_at}}</span>
+                                                        <span class="subheading">{{$project->created_at->format('Y/M/d')}}</span>
                                                         {{-- title --}}
                                                         <h2 class="mb-4"><a href="work.html">{{$project->title}}</a></h2>
                                                     </div>

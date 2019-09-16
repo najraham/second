@@ -58,27 +58,48 @@
     </section>
 
     {{-- MESSAGE --}}
+    <div class="container justify-content-center"><h1 id="message"></h1></div>
     <section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
         <div class="container-fluid px-0">
             <div class="row no-gutters block-9 justify-content-center">
                 <div class="col-md-6 order-md-last d-flex">
-                    <form action="#" class="bg-light p-5 contact-form">
+                    <form>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
+                            <input type="text" id="email" name="email" class="form-control" placeholder="Your Email">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
                         </div>
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                            <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-info py-3 px-5">
+                            <input type="button" onclick="sendMessage()" value="Send Message" class="btn btn-info py-3 px-5">
                         </div>
                     </form>
+
+                    <script>
+                        function sendMessage() {
+                            $.ajax({
+                                type:'POST',
+                                url:'/api/message',
+                                data:{
+                                    "_token": "{{ csrf_token() }}",
+                                    "name": $('#name').val(),
+                                    "email": $('#email').val(),
+                                    "subject": $('#subject').val(),
+                                    "message": $('textarea#message').val(),
+                                },
+                                success:function(data) {
+                                    console.log(data);
+                                    $('#message').text(data.success);
+                                }
+                            });
+                        }
+                    </script>
 
                 </div>
 

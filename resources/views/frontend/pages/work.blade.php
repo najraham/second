@@ -7,7 +7,7 @@
             <div class="row no-gutters slider-text js-fullheight align-items-end">
                 <div class="col-md-9 ftco-animate pb-5">
                     <h2 class="mb-3 bread">Beautiful Work</h2>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('show_index_page')}}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About us <i class="ion-ios-arrow-forward"></i></span></p>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('show_index_page')}}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Work <i class="ion-ios-arrow-forward"></i></span></p>
                 </div>
             </div>
         </div>

@@ -20,3 +20,4 @@ Route::get('/contact', 'PagesController@show_contact')->name('show_contact_page'
 Route::get('/work', 'PagesController@show_work')->name('show_work_page');
 
 Route::get('/singleWork', 'PagesController@show_single_work')->name('show_single_work_page');
+
