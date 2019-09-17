@@ -73,4 +73,17 @@ class PagesController extends Controller
         $contact = ContactInfo::first();
         return view('frontend.pages.single');
     }
+
+    // backend
+
+    public function show_dashboard(){
+        $title = "dashboard";
+        return view('backend.pages.dash')->with([
+            'title' => $title,
+        ]);
+    }
+
+    public function show_dashboard_index(){
+
+    }
 }

@@ -21,3 +21,6 @@ Route::get('/work', 'PagesController@show_work')->name('show_work_page');
 
 Route::get('/singleWork', 'PagesController@show_single_work')->name('show_single_work_page');
 
+// dashboard
+
+Route::get('/dashboard', 'PagesController@show_dashboard')->name('show_dashboard_page');
