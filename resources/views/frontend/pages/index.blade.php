@@ -8,16 +8,19 @@
 			<div class="half order-md-last"></div>
 			<div class="half">
 				<div class="home-slider owl-carousel">
-                    @foreach ($banner_images as $banner_image)
-                        <div class="slider-item js-fullheight">
-                            <div class="overlay"></div>
-                            <div class="container-fluid p-0">
-                                <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-                                    <div class="one-third img js-fullheight" style="background-image:url('{{asset("frontend/images/".$banner_image)}}');">
+                    @foreach ($index->banner_image as $banner_image)
+                        {{-- @if ($banner_image != "") --}}
+                            <div class="slider-item js-fullheight">
+                                <div class="overlay"></div>
+                                <div class="container-fluid p-0">
+                                    <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+                                        <div class="one-third img js-fullheight" style="background-image:url('{{asset("storage/backend/images/".$banner_image)}}');">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        {{-- @endif --}}
+
                     @endforeach
                 </div>
             </div>
@@ -78,7 +81,7 @@
                     <div class="container-fluid px-0 portfolio-entry">
                         <div class="row no-gutters d-xl-flex justify-content-end text-wrapper">
                             {{-- image --}}
-                            <div class="one-half img js-fullheight" style="background-image: url('{{asset('frontend/images/'.$project->image)}}');"></div>
+                            <div class="one-half img js-fullheight" style="background-image: url('{{asset('storage/backend/images/'.$project->image)}}');"></div>
                                 <div class="one-half half-text d-flex justify-content-end align-items-center ftco-animate">
                                     <div class="text align-items-center d-flex">
                                         <div class="desc pt-5 pl-4 pr-4 pt-lg-0 pl-lg-5 pl-xl-0 pr-xl-0">
@@ -105,7 +108,7 @@
                             <div class="col-md-12 portfolio-wrap">
                                 <div class="row no-gutters align-items-center">
                                     {{-- image --}}
-                                    <div class="col-md-5 img js-fullheight" style="background-image: url({{asset('frontend/images/'.$project->image)}});">
+                                    <div class="col-md-5 img js-fullheight" style="background-image: url({{asset('storage/backend/images/'.$project->image)}});">
 
                                     </div>
                                     <div class="col-md-7">

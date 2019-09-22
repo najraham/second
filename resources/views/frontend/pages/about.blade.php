@@ -18,7 +18,20 @@
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-md-4 d-flex">
-                    <div class="img" style="background-image: url('{{asset('frontend/images/bg_2.jpg')}}')"></div>
+                    <div class="home-slider owl-carousel">
+                        @foreach ($index->banner_image as $banner_image)
+                            <div class="slider-item js-fullheight">
+                                <div class="overlay"></div>
+                                <div class="container-fluid p-0">
+                                    <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+                                        <div class="one-third img js-fullheight" style="background-image:url('{{asset("storage/backend/images/".$banner_image)}}');">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    {{-- <div class="img" style="background-image: url('{{asset('frontend/images/bg_2.jpg')}}')"></div> --}}
                 </div>
                 <div class="col-md-8 py-md-5 pt-4 p-md-5">
                     {{-- title --}}

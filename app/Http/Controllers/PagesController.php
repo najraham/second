@@ -18,7 +18,7 @@ class PagesController extends Controller
         $projects = Project::all();
         $project_count = 1;
         $contact = ContactInfo::first();
-        $banner_images = explode(',' , $index->banner_image);
+        // $banner_images = explode(',' , $index->banner_image);
         // return $banner_images;
         return view('frontend.pages.index')->with([
             'index' => $index,
@@ -27,7 +27,7 @@ class PagesController extends Controller
             'projects' => $projects,
             'project_count' => $project_count,
             'contact' => $contact,
-            'banner_images' => $banner_images,
+            // 'banner_images' => $banner_images,
             ]);
     }
 
@@ -38,6 +38,7 @@ class PagesController extends Controller
         $projects = Project::all();
         $testimonies = Testimony::all();
         $contact = ContactInfo::first();
+        // $banner_images = explode(',' , $index->banner_image);
         return view('frontend.pages.about')->with([
             'index' => $index,
             'services' => $services,
@@ -45,6 +46,7 @@ class PagesController extends Controller
             'projects' => $projects,
             'testimonies' => $testimonies,
             'contact' => $contact,
+            // 'banner_images' =>$banner_images
         ]);
     }
 
@@ -76,14 +78,16 @@ class PagesController extends Controller
 
     // backend
 
-    public function show_dashboard(){
-        $title = "dashboard";
-        return view('backend.pages.dash')->with([
-            'title' => $title,
-        ]);
+    public function form_valid(){
+        $title = "form";
+        return view('backend.pages.form_validation')->with('title', $title);
     }
 
-    public function show_dashboard_index(){
-
+    public function validate_form(Request $request){
+        $this->validate($request, [
+            'title' => 'required|min:5',
+            'description' => 'required|alpha',
+        ]);
+        return $request->input('title');
     }
 }

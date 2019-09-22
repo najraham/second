@@ -10,30 +10,34 @@
             <li>
                 <a class="app-menu__item @if ($title == "dashboard") active @endif " href="{{route('show_dashboard_page')}}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a>
             </li>
-            <li class="treeview">
+            <li>
+                <a class="app-menu__item @if ($title == "index") active @endif" href="{{route('show_dashboard_index_page')}}"><i class="app-menu__icon fa fa-television"></i><span class="app-menu__label"> Index</span></a>
+            </li>
+            <li>
+                <a class="app-menu__item @if ($title == "projects") active @endif " href="{{route('show_dashboard_project_page')}}"><i class="app-menu__icon fa fa-briefcase"></i><span class="app-menu__label">Projects</span></a>
+            </li>
+            <li>
+                <a class="app-menu__item @if ($title == "services") active @endif " href="{{route('show_dashboard_service_page')}}"><i class="app-menu__icon fa fa-lightbulb-o"></i><span class="app-menu__label">Services</span></a>
+            </li>
+            <li>
+                <a class="app-menu__item @if ($title == "form") active @endif " href="{{route('form_valid')}}"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Form</span></a>
+            </li>
+            {{-- <li class="treeview">
                 <a class="app-menu__item " href="#" data-toggle="treeview">
                     <i class="app-menu__icon fa fa-files-o"></i>
                     <span class="app-menu__label">Pages</span>
                     <i class="treeview-indicator fa fa-angle-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a class="treeview-item" href="bootstrap-components.html"><i class="icon fa fa-television"></i> Index</a></li>
-                    <li><a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/"><i class="icon fa fa-address-card"></i> About</a></li>
-                    <li><a class="treeview-item" href="ui-cards.html"><i class="icon fa fa-briefcase"></i> Works</a></li>
+                    <li><a class="treeview-item @if ($title == "index") active @endif" href="{{route('show_dashboard_index_page')}}"><i class="icon fa fa-television"></i> Index</a></li>
+                    <li><a class="treeview-item @if ($title == "about") active @endif" href="{{route('show_dashboard_about_page')}}"><i class="icon fa fa-address-card"></i> About</a></li>
+                    <li><a class="treeview-item @if ($title == "work") active @endif" href="{{route('show_dashboard_work_page')}}"><i class="icon fa fa-briefcase"></i> Works</a></li>
                 </ul>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a class="app-menu__item" href="charts.html"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Charts</span></a>
-            </li>
-            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Forms</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a class="treeview-item" href="form-components.html"><i class="icon fa fa-circle-o"></i> Form Components</a></li>
-                    <li><a class="treeview-item" href="form-custom.html"><i class="icon fa fa-circle-o"></i> Custom Components</a></li>
-                    <li><a class="treeview-item" href="form-samples.html"><i class="icon fa fa-circle-o"></i> Form Samples</a></li>
-                    <li><a class="treeview-item" href="form-notifications.html"><i class="icon fa fa-circle-o"></i> Form Notifications</a></li>
-                </ul>
-            </li>
-            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Tables</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            </li> --}}
+            {{-- <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Tables</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a class="treeview-item" href="table-basic.html"><i class="icon fa fa-circle-o"></i> Basic Tables</a></li>
                     <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> Data Tables</a></li>
@@ -50,6 +54,6 @@
                     <li><a class="treeview-item" href="page-mailbox.html"><i class="icon fa fa-circle-o"></i> Mailbox</a></li>
                     <li><a class="treeview-item" href="page-error.html"><i class="icon fa fa-circle-o"></i> Error Page</a></li>
                 </ul>
-            </li>
+            </li> --}}
         </ul>
       </aside>

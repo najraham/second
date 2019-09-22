@@ -23,7 +23,7 @@
                             <div class="row align-items-center">
                                 <div class="col-md-12">
                                     {{-- image --}}
-                                    <div class="img js-fullheight" style="background-image: url({{asset('frontend/images/'.$project->image)}});">
+                                    <div class="img js-fullheight" style="background-image: url({{asset('storage/backend/images/'.$project->image)}});">
                                     </div>
                                 </div>
                                 <div class="col-md-12">

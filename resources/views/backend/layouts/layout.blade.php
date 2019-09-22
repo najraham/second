@@ -21,6 +21,13 @@
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/main.css')}}">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .multiline_td{
+            white-space:pre-wrap !important;
+            word-wrap:break-world !important;
+        }
+    </style>
   </head>
   <body class="app sidebar-mini rtl">
     <!-- Header-->
@@ -40,7 +47,19 @@
     <script src="{{asset('backend/js/plugins/pace.min.js')}}"></script>
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="{{asset('backend/js/plugins/chart.js')}}"></script>
+    <script type="text/javascript" src="{{asset('backend/js/plugins/bootstrap-notify.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('backend/js/plugins/sweetalert.min.js')}}"></script>
     <script type="text/javascript">
+        function successNotify(message , status){
+            $.notify({
+                title: " ",
+                message: message,
+                icon: 'fa fa-check'
+            },{
+                type: status
+            });
+        }
+
       var data = {
       	labels: ["January", "February", "March", "April", "May"],
       	datasets: [

@@ -19,5 +19,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Message
 
-Route::post('/message', 'MessageController@send')->name('send_message');
+Route::post('/message', 'MessageController@send');
+
+Route::post('/editIndex', 'IndexController@editIndex');
+
+Route::get('/deleteImage/{i}', 'DashboardController@deleteImage');
+
+Route::get('/deleteProject/{id}', 'ProjectController@deleteProject');
+
+// Route::post('/saveImage', 'DashboardController@saveImage');
 

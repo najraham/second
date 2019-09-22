@@ -23,4 +23,34 @@ Route::get('/singleWork', 'PagesController@show_single_work')->name('show_single
 
 // dashboard
 
-Route::get('/dashboard', 'PagesController@show_dashboard')->name('show_dashboard_page');
+Route::get('/dashboard', 'DashboardController@show_dashboard')->name('show_dashboard_page');
+
+Route::get('/dashboardIndex', 'DashboardController@show_dashboard_index')->name('show_dashboard_index_page');
+
+Route::get('/dashboardAbout', 'DashboardController@show_dashboard_about')->name('show_dashboard_about_page');
+
+Route::get('/dashboardWork', 'DashboardController@show_dashboard_work')->name('show_dashboard_work_page');
+
+Route::get('/dashboardProject', 'DashboardController@show_dashboard_project')->name('show_dashboard_project_page');
+
+Route::get('/dashboardService', 'DashboardController@show_dashboard_service')->name('show_dashboard_service_page');
+
+// index
+
+Route::post('/editImage' , 'IndexController@editImage')->name('edit_image');
+
+Route::post('/addImage' , 'IndexController@addImage')->name('add_image');
+
+// project
+
+Route::post('/editProject', 'ProjectController@editProject')->name('edit_project');
+
+Route::post('/addProject', 'ProjectController@addProject')->name('add_project');
+
+// services
+
+
+
+Route::get('/form' , 'PagesController@form_valid')->name('form_valid');
+
+Route::post('/formValidate' , 'PagesController@validate_form')->name('validate_form');
