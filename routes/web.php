@@ -59,6 +59,8 @@ Route::post('/addService' , 'ServiceController@addService')->name('add_service')
 
 Route::post('/editTestimony', 'TestimonyController@editTestimony')->name('edit_testimony');
 
+Route::post('/addTestimony', 'TestimonyController@addTestimony')->name('add_testimony');
+
 
 
 Route::get('/form' , 'PagesController@form_valid')->name('form_valid');

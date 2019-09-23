@@ -29,5 +29,7 @@ Route::get('/deleteProject/{id}', 'ProjectController@deleteProject');
 
 Route::get('/deleteService/{id}', 'ServiceController@deleteService');
 
+Route::get('/deleteTestimony/{id}' , 'TestimonyController@deleteTestimony');
+
 // Route::post('/saveImage', 'DashboardController@saveImage');
 

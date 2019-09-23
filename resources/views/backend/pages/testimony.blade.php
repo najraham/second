@@ -31,7 +31,7 @@
                                 </button>
                             </div>
                             <div class="col">
-                                <button class="btn btn-danger btn-sm">
+                                <button class="btn btn-danger btn-sm" onclick="deleteTestimony('{{$testimony->id}}')">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </div>
@@ -53,17 +53,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{route('add_service')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('add_testimony')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                {{-- <input type="hidden" name="id" id="id"> --}}
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="title" class="control-label">Title</label>
-                        <input class="form-control" type="text" name="title" id="title">
-                    </div>
-                    <div class="form-group">
-                        <label for="description" class="control-label">Description</label>
-                        <textarea class="form-control" name="description" id="description" cols="30" rows="5"></textarea>
+                        <label for="saying" class="control-label">Saying</label>
+                        <input class="form-control" type="text" name="saying" id="saying">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -108,6 +103,36 @@
         $('#edit-id').attr('value', id);
         $('#edit-saying').attr('value', saying);
         $('#edit-testimony').modal('show');
+    }
+
+    function deleteTestimony(id){
+        swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover this data!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel it!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+        function(isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    type: 'GET',
+                    url: `/api/deleteTestimony/${id}`,
+                    data: {
+                    },
+                    success:function(data){
+                        swal("Deleted!", "Your data has been deleted.", "success");
+                        location.reload(true);
+                    }
+                });
+
+            } else {
+                swal("Cancelled", "Your data is safe :)", "error");
+            }
+        });
     }
 </script>
 @endsection
