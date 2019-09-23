@@ -35,6 +35,8 @@ Route::get('/dashboardProject', 'DashboardController@show_dashboard_project')->n
 
 Route::get('/dashboardService', 'DashboardController@show_dashboard_service')->name('show_dashboard_service_page');
 
+Route::get('/dashboardTestimony', 'DashboardController@show_dashboard_testimony')->name('show_dashboard_testimony_page');
+
 // index
 
 Route::post('/editImage' , 'IndexController@editImage')->name('edit_image');
@@ -48,6 +50,14 @@ Route::post('/editProject', 'ProjectController@editProject')->name('edit_project
 Route::post('/addProject', 'ProjectController@addProject')->name('add_project');
 
 // services
+
+Route::post('/editService' , 'ServiceController@editService')->name('edit_service');
+
+Route::post('/addService' , 'ServiceController@addService')->name('add_service');
+
+// testimony
+
+Route::post('/editTestimony', 'TestimonyController@editTestimony')->name('edit_testimony');
 
 
 

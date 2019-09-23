@@ -205,8 +205,7 @@
         }
 
         function delete_image(image_index){
-            console.log(image_index)
-            // successNotify(i , "delete");
+            // console.log(image_index);
             swal({
                 title: "Are you sure?",
                 text: "You will not be able to recover this file!",
@@ -231,7 +230,7 @@
                     });
 
                 } else {
-                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                    swal("Cancelled", "Your file is safe :)", "error");
                 }
             });
         }

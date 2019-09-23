@@ -27,5 +27,7 @@ Route::get('/deleteImage/{i}', 'DashboardController@deleteImage');
 
 Route::get('/deleteProject/{id}', 'ProjectController@deleteProject');
 
+Route::get('/deleteService/{id}', 'ServiceController@deleteService');
+
 // Route::post('/saveImage', 'DashboardController@saveImage');
 

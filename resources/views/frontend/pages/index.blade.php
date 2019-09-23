@@ -42,7 +42,7 @@
 	</section>
 
     {{-- SERVICES --}}
-    @if (count($services) > 0)
+    @if ($service_count > 0)
         <section class="services-section py-5 py-md-0">
             <div class="container">
                 <div class="row no-gutters d-flex">

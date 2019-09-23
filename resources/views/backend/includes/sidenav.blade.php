@@ -20,6 +20,9 @@
                 <a class="app-menu__item @if ($title == "services") active @endif " href="{{route('show_dashboard_service_page')}}"><i class="app-menu__icon fa fa-lightbulb-o"></i><span class="app-menu__label">Services</span></a>
             </li>
             <li>
+                <a class="app-menu__item @if ($title == "testimonies") active @endif " href="{{route('show_dashboard_testimony_page')}}"><i class="app-menu__icon fa fa-comments"></i><span class="app-menu__label">Testimonies</span></a>
+            </li>
+            <li>
                 <a class="app-menu__item @if ($title == "form") active @endif " href="{{route('form_valid')}}"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Form</span></a>
             </li>
             {{-- <li class="treeview">

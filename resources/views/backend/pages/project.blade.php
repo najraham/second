@@ -27,15 +27,15 @@
                         <td class="multiline_td" id="Title">{{$project->title}}</td>
                         <td class="multiline_td">{{$project->description}}</td>
                         {{-- <td class="multiline_td">{{$project->link}}</td> --}}
-                        <td>
+                        <td style="width:150px">
                             <div class="row">
                                 <div class="col">
-                                    <button class="btn btn-primary" onclick="openEditModal('{{$project->id}}', '{{$project->title}}' , '{{$project->description}}' , '{{$project->image}}' , '{{$project->link}}')">
+                                    <button class="btn btn-primary btn-sm" onclick="openEditModal('{{$project->id}}', '{{$project->title}}' , '{{$project->description}}' , '{{$project->image}}' , '{{$project->link}}')">
                                         <i class="fa fa-edit"></i>
                                     </button>
                                 </div>
                                 <div class="col">
-                                    <button class="btn btn-danger" onclick="deleteProject('{{$project->id}}')">
+                                    <button class="btn btn-danger btn-sm" onclick="deleteProject('{{$project->id}}')">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Index;
 use App\Project;
 use App\Service;
+use App\Testimony;
 
 class DashboardController extends Controller
 {
@@ -52,10 +53,22 @@ class DashboardController extends Controller
     public function show_dashboard_service(){
         $services = Service::all();
         $title = "services";
+        $rows = Service::select('id', 'icon')->get();
 
         return view('backend.pages.services')->with([
             'services' => $services,
             'title' => $title,
+            'rows' =>$rows,
+        ]);
+    }
+
+    public function show_dashboard_testimony(){
+        $title = "testimonies";
+        $testimonies = Testimony::all();
+
+        return view('backend.pages.testimony')->with([
+            'title' =>$title,
+            'testimonies' =>$testimonies,
         ]);
     }
 }
