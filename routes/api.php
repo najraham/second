@@ -31,5 +31,7 @@ Route::get('/deleteService/{id}', 'ServiceController@deleteService');
 
 Route::get('/deleteTestimony/{id}' , 'TestimonyController@deleteTestimony');
 
+Route::get('/showUserTable/{type}', 'UserController@showUserTable');
+
 // Route::post('/saveImage', 'DashboardController@saveImage');
 

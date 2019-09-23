@@ -1,6 +1,15 @@
 @extends('backend.layouts.layout')
 
 @section('content')
+
+    <div class="app-title">
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item"><a href="{{route('show_dashboard_page')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{route('show_dashboard_service_page')}}">Service</a></li>
+        </ul>
+    </div>
+
     <div class="tile">
         <div class="row">
             <div class="col-md-6">

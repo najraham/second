@@ -11,6 +11,9 @@
                 <a class="app-menu__item @if ($title == "dashboard") active @endif " href="{{route('show_dashboard_page')}}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a>
             </li>
             <li>
+                <a class="app-menu__item @if ($title == "users") active @endif" href="{{route('show_dashboard_user_page')}}"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label"> Users</span></a>
+            </li>
+            <li>
                 <a class="app-menu__item @if ($title == "index") active @endif" href="{{route('show_dashboard_index_page')}}"><i class="app-menu__icon fa fa-television"></i><span class="app-menu__label"> Index</span></a>
             </li>
             <li>

@@ -2,7 +2,7 @@
 <header class="app-header">
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
     {{-- logo --}}
-    <a class="app-header__logo" href="{{route('show_dashboard_page')}}">Anisha</a>
+    <a class="app-header__logo" href="{{route('show_dashboard_page')}}">{{ config('app.name', 'Laravel') }}</a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
       {{-- <li class="app-search">

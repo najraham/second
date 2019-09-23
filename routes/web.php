@@ -37,6 +37,8 @@ Route::get('/dashboardService', 'DashboardController@show_dashboard_service')->n
 
 Route::get('/dashboardTestimony', 'DashboardController@show_dashboard_testimony')->name('show_dashboard_testimony_page');
 
+Route::get('/dashboardUser', 'DashboardController@show_dashboard_user')->name('show_dashboard_user_page');
+
 // index
 
 Route::post('/editImage' , 'IndexController@editImage')->name('edit_image');
@@ -66,3 +68,7 @@ Route::post('/addTestimony', 'TestimonyController@addTestimony')->name('add_test
 Route::get('/form' , 'PagesController@form_valid')->name('form_valid');
 
 Route::post('/formValidate' , 'PagesController@validate_form')->name('validate_form');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

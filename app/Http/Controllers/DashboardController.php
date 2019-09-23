@@ -7,6 +7,7 @@ use App\Index;
 use App\Project;
 use App\Service;
 use App\Testimony;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -69,6 +70,16 @@ class DashboardController extends Controller
         return view('backend.pages.testimony')->with([
             'title' =>$title,
             'testimonies' =>$testimonies,
+        ]);
+    }
+
+    public function show_dashboard_user(){
+        $title = "users";
+        $users = User::all();
+
+        return view('backend.pages.user')->with([
+            'title' => $title,
+            'users' => $users,
         ]);
     }
 }
