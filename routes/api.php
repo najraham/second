@@ -23,7 +23,7 @@ Route::post('/message', 'MessageController@send');
 
 Route::post('/editIndex', 'IndexController@editIndex');
 
-Route::get('/deleteImage/{i}', 'DashboardController@deleteImage');
+Route::get('/deleteImage/{i}', 'IndexController@deleteImage');
 
 Route::get('/deleteProject/{id}', 'ProjectController@deleteProject');
 
@@ -31,7 +31,7 @@ Route::get('/deleteService/{id}', 'ServiceController@deleteService');
 
 Route::get('/deleteTestimony/{id}' , 'TestimonyController@deleteTestimony');
 
-Route::get('/showUserTable/{type}', 'UserController@showUserTable');
+Route::get('/deleteUser/{id}', 'UserController@deleteUser');
 
 // Route::post('/saveImage', 'DashboardController@saveImage');
 

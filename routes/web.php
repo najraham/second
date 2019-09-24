@@ -37,7 +37,7 @@ Route::get('/dashboardService', 'DashboardController@show_dashboard_service')->n
 
 Route::get('/dashboardTestimony', 'DashboardController@show_dashboard_testimony')->name('show_dashboard_testimony_page');
 
-Route::get('/dashboardUser', 'DashboardController@show_dashboard_user')->name('show_dashboard_user_page');
+Route::get('/dashboardUser/filter={type}', 'DashboardController@show_dashboard_user')->name('show_dashboard_user_page');
 
 // index
 
@@ -62,6 +62,12 @@ Route::post('/addService' , 'ServiceController@addService')->name('add_service')
 Route::post('/editTestimony', 'TestimonyController@editTestimony')->name('edit_testimony');
 
 Route::post('/addTestimony', 'TestimonyController@addTestimony')->name('add_testimony');
+
+// user
+
+Route::post('/addUser', 'UserController@addUser')->name('add_user');
+
+Route::post('/editUser', 'UserController@editUser')->name('edit_user');
 
 
 

@@ -8,9 +8,13 @@ use App\Project;
 use App\Service;
 use App\Testimony;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+    // public function __construct(){
+    //     $this->middleware(auth);
+    // }
     public function show_dashboard(){
         $title = "dashboard";
         return view('backend.pages.dash')->with([
@@ -73,13 +77,22 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function show_dashboard_user(){
+    public function show_dashboard_user($filter){
         $title = "users";
-        $users = User::all();
+        if($filter == 'ALL') {
+            $users = User::all();
+        }
+        elseif($filter == 'ADMIN') {
+            $users = User::where('type', 1)->get();
+        }
+        else {
+            $users = User::where('type', '!=', 1)->get();
+        }
 
         return view('backend.pages.user')->with([
             'title' => $title,
             'users' => $users,
+            'filter' => $filter,
         ]);
     }
 }
