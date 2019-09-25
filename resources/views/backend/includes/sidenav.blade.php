@@ -8,6 +8,9 @@
         </div> --}}
         <ul class="app-menu">
             <li>
+                <a class="app-menu__item" href="{{route('show_index_page')}}"><i class="app-menu__icon fas fa-directions"></i><span class="app-menu__label"> Go to Site</span></a>
+            </li>
+            <li>
                 <a class="app-menu__item @if ($title == "dashboard") active @endif " href="{{route('show_dashboard_page')}}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a>
             </li>
             <li>
@@ -24,6 +27,9 @@
             </li>
             <li>
                 <a class="app-menu__item @if ($title == "testimonies") active @endif " href="{{route('show_dashboard_testimony_page')}}"><i class="app-menu__icon fa fa-comments"></i><span class="app-menu__label">Testimonies</span></a>
+            </li>
+            <li>
+                <a class="app-menu__item @if ($title == "contact") active @endif " href="{{route('show_dashboard_contact_page')}}"><i class="app-menu__icon fa fa-id-card"></i><span class="app-menu__label">Contact</span></a>
             </li>
             <li>
                 <a class="app-menu__item @if ($title == "form") active @endif " href="{{route('form_valid')}}"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Form</span></a>

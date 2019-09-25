@@ -8,18 +8,34 @@ use App\Project;
 use App\Service;
 use App\Testimony;
 use App\User;
+use App\ContactInfo;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    // public function __construct(){
-    //     $this->middleware(auth);
-    // }
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function show_dashboard(){
-        $title = "dashboard";
-        return view('backend.pages.dash')->with([
-            'title' => $title,
-        ]);
+        if (Auth::user()->type == 1){
+            $title = "dashboard";
+            $users = User::all();
+            $projects = Project::all();
+            $services = Service::all();
+            $testimonies = Testimony::all();
+
+            return view('backend.pages.dash')->with([
+                'title' => $title,
+                'users' => $users,
+                'projects' => $projects,
+                'services' => $services,
+                'testimonies' => $testimonies,
+            ]);
+        }
+        else{
+            return redirect('/');
+        }
     }
 
     public function show_dashboard_index(){
@@ -93,6 +109,16 @@ class DashboardController extends Controller
             'title' => $title,
             'users' => $users,
             'filter' => $filter,
+        ]);
+    }
+
+    public function show_dashboard_contact(){
+        $title = "contact";
+        $contact = ContactInfo::first();
+
+        return view('backend.pages.contact')->with([
+            'title' => $title,
+            'contact' => $contact,
         ]);
     }
 }

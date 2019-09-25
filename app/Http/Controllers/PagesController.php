@@ -73,7 +73,10 @@ class PagesController extends Controller
     public function show_single_work(){
         $index = Index::first();
         $contact = ContactInfo::first();
-        return view('frontend.pages.single');
+        return view('frontend.pages.single')->with([
+            'index'=> $index,
+            'contact' => $contact,
+            ]);
     }
 
     // backend

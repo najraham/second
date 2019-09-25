@@ -3,7 +3,7 @@
 @section('content')
     {{-- BANNER --}}
 	<section id="home-section" class="hero">
-		<h1 class="vr text-center">ANiSA</h1>
+		<h1 class="vr text-center">{{ config('app.name', 'Laravel') }}</h1>
 		<div class="js-fullheight home-wrap d-flex">
 			<div class="half order-md-last"></div>
 			<div class="half">
@@ -30,8 +30,8 @@
     {{-- INDEX --}}
 	<section class="ftco-section ftco-intro">
 		<div class="container">
-			<div class="row justify-content-end">
-				<div class="col-md-8">
+			<div class="row justify-content-center">
+				<div class="col-md-10">
                     {{-- title --}}
                     <h2>{{$index->title}}</h2>
                     {{-- description --}}

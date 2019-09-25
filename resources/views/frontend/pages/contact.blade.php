@@ -96,6 +96,10 @@
                                 success:function(data) {
                                     console.log(data);
                                     $('#message').text(data.success);
+                                    $('#name').val('');
+                                    $('#email').val('');
+                                    $('#subject').val('');
+                                    $('#message').text('');
                                 }
                             });
                         }

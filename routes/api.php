@@ -33,5 +33,7 @@ Route::get('/deleteTestimony/{id}' , 'TestimonyController@deleteTestimony');
 
 Route::get('/deleteUser/{id}', 'UserController@deleteUser');
 
+Route::post('/editContact', 'ContactController@editContact');
+
 // Route::post('/saveImage', 'DashboardController@saveImage');
 

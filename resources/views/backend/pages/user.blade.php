@@ -76,7 +76,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{route('add_user')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('add_user')}}" method="POST">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
@@ -91,12 +91,12 @@
                         </div>
                         <div class="form-group">
                             <label for="password" class="control-label">Pasword</label>
-                            <input type="text" class="form-control @if ($errors->has('password')) is-invalid @endif" name="password" id="password" value="{{old('password')}}">
+                            <input type="password" class="form-control @if ($errors->has('password')) is-invalid @endif" name="password" id="password" value="{{old('password')}}">
                             {!! $errors->first('password', '<div class="text-danger">:message</div>') !!}
                         </div>
                         <div class="form-group">
-                            <label for="password_confirmation" class="control-label">Pasword</label>
-                            <input type="text" class="form-control @if ($errors->has('password')) is-invalid @endif" name="password_confirmation" id="password_confirmation" value="{{old('password')}}">
+                            <label for="password_confirmation" class="control-label">Confirm Pasword</label>
+                            <input type="password" class="form-control @if ($errors->has('password')) is-invalid @endif" name="password_confirmation" id="password_confirmation" value="{{old('password_confirmation')}}">
                             {!! $errors->first('password', '<div class="text-danger">:message</div>') !!}
                         </div>
                         <div class="form-group">
@@ -199,4 +199,14 @@
             });
         }
     </script>
+
+    @push('scripts')
+        @if($errors->any())
+            <script>
+                $('#add-user').modal('show');
+            </script>
+        @endif
+    @endpush
+
+
 @endsection

@@ -37,6 +37,8 @@ Route::get('/dashboardService', 'DashboardController@show_dashboard_service')->n
 
 Route::get('/dashboardTestimony', 'DashboardController@show_dashboard_testimony')->name('show_dashboard_testimony_page');
 
+Route::get('/dashboardContact', 'DashboardController@show_dashboard_contact')->name('show_dashboard_contact_page');
+
 Route::get('/dashboardUser/filter={type}', 'DashboardController@show_dashboard_user')->name('show_dashboard_user_page');
 
 // index
