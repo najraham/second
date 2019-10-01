@@ -71,6 +71,12 @@
     </style>
   </head>
   <body class="app sidebar-mini rtl">
+
+    {{-- <div id="app">
+        <example-component></example-component>
+    </div> --}}
+
+
     <!-- Header-->
     @include('backend.includes.header')
     <!-- Sidebar menu-->
@@ -79,6 +85,8 @@
     <main class="app-content">
         @yield('content')
     </main>
+
+    <script src="{{asset('js/app.js')}}"></script>
     <!-- Essential javascripts for application to work-->
     <script src="{{asset('backend/js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{asset('backend/js/popper.min.js')}}"></script>

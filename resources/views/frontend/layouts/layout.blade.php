@@ -28,9 +28,16 @@
         <link rel="stylesheet" href="{{asset('frontend/css/icomoon.css')}}">
         <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
 
+
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
         {{-- <link rel="stylesheet" href="{{asset('css/app.css')}}"> --}}
     </head>
     <body>
+        {{-- <div id="app">
+            <example-component></example-component>
+        </div> --}}
 
         @include('frontend.includes.navbar')
 
@@ -57,6 +64,6 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
         <script src="{{asset('frontend/js/google-map.js')}}"></script>
         <script src="{{asset('frontend/js/main.js')}}"></script>
-        {{-- <script src="{{asset('js/app.js')}}"></script> --}}
+        <script src="{{asset('js/app.js')}}"></script>
     </body>
 </html>
